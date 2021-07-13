@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  centos:
+    build: ./
+    container_name: splunkFree-container
+    volumes:
+      - ./splunk:/opt/splunk
+      - "/etc/timezone:/etc/timezone:ro"
+      - "/etc/localtime:/etc/localtime:ro"
+    restart: always
+    ports:
+      - "8000:8000"
